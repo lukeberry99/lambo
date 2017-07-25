@@ -34,6 +34,7 @@ showhelp()
     echo "${green}  -n, --node${reset}                    Runs '${green}yarn${reset}' if installed, otherwise runs '${green}npm install${reset}' after creating the project"
     echo "${green}  -b, --browser \"browser path\"${reset}  Opens site in specified browser"
     echo "${green}  -l, --link${reset}                    Creates a Valet link to the project directory"
+    echo "${green}  -d, --defer{$reset}                   Defers the editor opening until after other commands have completed"
     quit
 }
 
@@ -230,6 +231,9 @@ while [[ $# -gt 0 ]]; do
             ;;
         -l|--link)
             LINK=true
+            ;;
+        -d|--defer)
+            DEFEREDITOR=true
             ;;
         *)
             ;;
